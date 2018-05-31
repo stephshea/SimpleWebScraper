@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Net;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace SimpleWebScraper
 {
@@ -6,7 +11,9 @@ namespace SimpleWebScraper
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var client = new WebClient();
+            var text = client.DownloadString("http://provcomlib.org");
+            Console.WriteLine(text);
         }
     }
 }
